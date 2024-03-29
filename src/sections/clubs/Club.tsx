@@ -97,7 +97,7 @@ const Club = ({ id }: { id: number }) => {
             <p className="flex-1 ">أسم الملعب: سانتياغو برنابيو</p>
             <p className="flex-1">تأريخ البناء: 1955</p>
           </div>
-          <Image src={img1} alt={"stadium"} />
+          <Image src={img1} alt={"stadium"} width={370} height={370} />
         </div>
       </div>
       <div className="md:col-span-1 col-span-2">
