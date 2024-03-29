@@ -63,7 +63,7 @@ const Reservation = () => {
             className="rounded-md calender mb-8 p-0"
           />
           <h3 className="text-bold text-lg font-bold mb-6">مقاسات الملعب</h3>
-          <div className="mt-[5px] flex flex-1 border border-[#B3B3B3] rounded-lg text-[#4D4D4D] sm:text-sm text-xs font-semibold cursor-pointer  ">
+          <div className="mt-[5px] flex flex-1 border border-[#B3B3B3] rounded-lg text-[#4D4D4D] sm:text-sm text-xs font-semibold cursor-pointer mb-8 ">
             <div
               className={`py-[10px] flex-1 text-center ${
                 stadium === "4V4" ? "bg-button text-white rounded-r-lg" : ""
