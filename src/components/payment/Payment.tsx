@@ -8,7 +8,13 @@ const Payment = () => {
   return (
     <div className="p-4 bg-white rounded-xl w-[480px]">
       <Link href={"/reservation"}>
-        <Image src={icon} alt={"icon"} className="mr-auto mb-7" priority />
+        <Image
+          unoptimized
+          src={icon}
+          alt={"icon"}
+          className="mr-auto mb-7"
+          priority
+        />
       </Link>
       <h3 className="text-lg text-primary font-bold mb-[20px]">
         أختيار البطاقة
@@ -25,6 +31,7 @@ const Payment = () => {
             />
 
             <Image
+              unoptimized
               src={payment}
               alt={"payment"}
               width={46}
@@ -51,6 +58,7 @@ const Payment = () => {
             />
 
             <Image
+              unoptimized
               src={payment1}
               alt={"payment"}
               width={46}

@@ -35,7 +35,7 @@ const Footer = () => (
             width={24}
             height={24}
             className="object-contain"
-          ></Image>
+          />
         ))}
       </div>
     </div>

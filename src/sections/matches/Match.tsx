@@ -96,7 +96,7 @@ const Match = ({ id }: { id: number }) => {
           </h2>
         </div>
         <div className="h-fit w-[100%] flex gap-3 items-center">
-          <Image src={goal} alt={"goal"} width={18} height={18} />
+          <Image unoptimized src={goal} alt={"goal"} width={18} height={18} />
           <div>
             <p className="text-secondary font-medium text-sm">
               <span className="ml-2">4</span> جود بيلنجهام
@@ -104,7 +104,13 @@ const Match = ({ id }: { id: number }) => {
           </div>
         </div>
         <div className="h-fit w-[50%] mr-auto flex gap-3 items-center">
-          <Image src={yellowcard} alt={"yellowcard"} width={18} height={18} />
+          <Image
+            unoptimized
+            src={yellowcard}
+            alt={"yellowcard"}
+            width={18}
+            height={18}
+          />
           <div>
             <p className="text-secondary font-medium text-sm">
               <span className="ml-2">8</span> جود بيلنجهام
@@ -112,7 +118,7 @@ const Match = ({ id }: { id: number }) => {
           </div>
         </div>
         <div className="h-fit w-[100%] flex gap-3 items-center">
-          <Image src={goal} alt={"goal"} width={18} height={18} />
+          <Image unoptimized src={goal} alt={"goal"} width={18} height={18} />
           <div>
             <p className="text-secondary font-medium text-sm">
               <span className="ml-2">11</span> جود بيلنجهام
@@ -120,7 +126,13 @@ const Match = ({ id }: { id: number }) => {
           </div>
         </div>
         <div className="h-fit w-[50%] mr-auto flex gap-3 items-center">
-          <Image src={yellowcard} alt={"yellowcard"} width={18} height={18} />
+          <Image
+            unoptimized
+            src={yellowcard}
+            alt={"yellowcard"}
+            width={18}
+            height={18}
+          />
           <div>
             <p className="text-secondary font-medium text-sm">
               <span className="ml-2">59</span> جود بيلنجهام
