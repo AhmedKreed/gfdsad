@@ -3,6 +3,7 @@ import { Matche } from "@/constants";
 import TeamPlayers from "@/components/TeamPlayers";
 import goal from "@/assets/Vector (3).png";
 import yellowcard from "@/assets/image 16.png";
+import Link from "next/link";
 
 const Match = ({ id }: { id: number }) => {
   return (
@@ -29,7 +30,10 @@ const Match = ({ id }: { id: number }) => {
             </p>
           </div>
           <div className="flex justify-between items-center">
-            <div className="flex flex-col items-center min-h-[112px]">
+            <Link
+              className="flex flex-col items-center min-h-[112px]"
+              href={`/clubs/${Matche[id].id}`}
+            >
               <Image
                 unoptimized
                 src={Matche[id].teams.theHost.img}
@@ -41,7 +45,7 @@ const Match = ({ id }: { id: number }) => {
               <h3 className="text-[#4D4D4D] font-bold">
                 {Matche[id].teams.theHost.name}
               </h3>
-            </div>
+            </Link>
             <p className="text-primary text-bold text-base sm:text-lg">
               {Matche[id].teams.theHost.goal.number}
             </p>
