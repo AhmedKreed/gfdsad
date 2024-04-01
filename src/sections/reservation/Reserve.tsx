@@ -31,8 +31,8 @@ for (let index = 0; index < 12; index++) {
 }
 const Reserve = () => {
   // restoring the locations in the useState
-  const [locations, setLocations] = useState<any>();
-  const onInputChange = (x: any, { action, prevInputValue }: any) => {
+  const [locations, setLocations] = useState<string[]>();
+  const onInputChange = (x: any, { action }: any) => {
     if (action === "select-option") {
       setLocations(x);
       // when adding from the select
@@ -40,7 +40,7 @@ const Reserve = () => {
       setLocations(undefined);
       // when clearing from the select
     } else if (action === "remove-value") {
-      locations?.length === 1 ? setLocations(undefined) : locations(x);
+      locations?.length === 1 ? setLocations(undefined) : setLocations(x);
       // when removing certain value from the select
     }
   };
@@ -53,6 +53,7 @@ const Reserve = () => {
             فئات الملاعب
           </span>
           <Select
+            placeholder="المنطقة"
             instanceId={1}
             components={makeAnimated()}
             isMulti

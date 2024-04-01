@@ -55,6 +55,7 @@ const Matches = () => {
     <section className="grid md:grid-cols-3 grid-cols-1 md:gap-8">
       <nav className="col-span-1 md:m-0 mb-8">
         <Select
+          placeholder="الرياضة"
           instanceId={1}
           components={makeAnimated()}
           isMulti
@@ -72,8 +73,8 @@ const Matches = () => {
             unoptimized
             src={rightArrow}
             alt={"rightArrow"}
-            width={18}
-            height={18}
+            width={32}
+            height={32}
             className="object-contain max-sm:hidden w-auto h-auto"
             onClick={() => handleRightArrow()}
           />
@@ -149,16 +150,16 @@ const Matches = () => {
             unoptimized
             src={leftArrow}
             alt={"leftArrow"}
-            width={18}
-            height={18}
+            width={32}
+            height={32}
             className="object-contain max-sm:hidden"
             onClick={handleLeftArrow}
           />
         </div>
 
         <div className="flex flex-col gap-8">
-          <div className="p-6 bg-[#FCFCFD] mb-8 rounded-lg">
-            <div className="flex gap-2 items-center mb-8">
+          <div className="p-6 mb-8 rounded-lg">
+            <div className="flex gap-2 items-center mb-8 p-6 bg-[#F2F2F2] rounded-xl">
               <Image
                 unoptimized
                 src={leagueimg1}
@@ -167,9 +168,12 @@ const Matches = () => {
                 height={32}
                 className="object-contain"
               />
-              <h1 className="text-primary font-bold text-lg">
+              <Link
+                className="text-primary font-bold text-lg"
+                href={"/league/1"}
+              >
                 الدوري الإنجليزي  الممتاز
-              </h1>
+              </Link>
             </div>
             <div>
               {Matche.map((item) => (
@@ -200,7 +204,7 @@ const Matches = () => {
                           : "bg-[#F9F5FF] text-[#135CB8]"
                       } text-xs py-1 px-4 rounded-2xl h-fit absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}
                     >
-                      {item.isPlaying ? `${item.Time} | مباشر` : item.Time}
+                      1:1
                     </span>
                     <div className="flex items-center sm:gap-2 sm:flex-row gap-4 flex-col relative">
                       <p className="font-medium text-[#4D4D4D] sm:text-sm text-xl">
@@ -222,8 +226,11 @@ const Matches = () => {
               ))}
             </div>
           </div>
-          <div className="p-6 bg-[#FCFCFD] rounded-lg">
-            <div className="flex gap-2 items-center mb-8">
+          <div className="p-6 mb-8 rounded-lg">
+            <Link
+              href={"/league/1"}
+              className="flex gap-2 items-center mb-8 p-6 bg-[#F2F2F2] rounded-xl"
+            >
               <Image
                 unoptimized
                 src={leagueimg1}
@@ -235,7 +242,7 @@ const Matches = () => {
               <h1 className="text-primary font-bold text-lg">
                 الدوري الإنجليزي  الممتاز
               </h1>
-            </div>
+            </Link>
             <div>
               {Matche.map((item) => (
                 <div key={item.id} className=" flex flex-col gap-8 mt-8">

@@ -148,7 +148,7 @@ const Home1 = () => (
         ))}
         <div className="lines" />
       </div>
-      <ShowMore link={"/leagues"} />
+      <ShowMore link={"/league"} />
     </div>
   </div>
 );

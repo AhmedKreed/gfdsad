@@ -6,7 +6,7 @@ import { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import img from "@/assets/image1.png";
+import img from "@/assets/image8.png";
 
 const club = [
   { value: "عصبان", label: "عصبان" },
@@ -20,7 +20,7 @@ type ClubType = {
   value: string;
   label: string;
 }[];
-const Clubs = () => {
+const Players = () => {
   const [clubs, setClubs] = useState<ClubType>();
   const [inputValue, setInputValue] = useState<string>("");
   const [submit, setSubmit] = useState<string>();
@@ -52,14 +52,14 @@ const Clubs = () => {
     .filter(
       (item) =>
         !submit ||
-        (item.team.slice(0, submit.length).toLowerCase() ===
+        (item.name.slice(0, submit.length).toLowerCase() ===
           submit.toLowerCase() &&
-          item.team.toLowerCase() !== submit.toLowerCase())
+          item.name.toLowerCase() !== submit.toLowerCase())
     );
 
   return (
     <section className="relative">
-      <div className="flex md:flex-row items-center flex-col md:gap-0 gap-4 mb-10">
+      <div className="flex md:flex-row items-center flex-col md:gap-0 gap-4 mb-8">
         <form
           className="relative h-fit md:w-2/3 w-full ml-2"
           onSubmit={handleSubmit}
@@ -90,25 +90,29 @@ const Clubs = () => {
           onChange={onInputClubsChange}
         />
       </div>
-      <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
         {playersDate.map((item) => (
-          <Link
-            key={`${item.id}`}
-            href={`/clubs/${item.id}`}
-            className="flex gap-4 items-center"
-          >
-            <Image unoptimized src={img} alt={"club logo"} />
-            <div className=" flex-col gap-6">
-              <h3 className="font-semibold text-primary">
-                النادي : {item.club}
+          <Link key={`${item.id}`} href={`/players/${item.id}`}>
+            <Image
+              unoptimized
+              src={img}
+              width={200}
+              height={200}
+              alt={"player's img"}
+              className="w-full h-[250px] object-cover rounded-t-xl"
+            />
+            <div className="p-2 text-lg text-secondary ">
+              <h3 className="text-2xl text-primary font-semibold mb-3">
+                {item.name}
               </h3>
-              <p className="text-secondary">الفريق : {item.team}</p>
+              <p>الفريق : {item.team}</p>
+              <p>النادي : {item.club}</p>
             </div>
           </Link>
         ))}
         {playersDate.every((item) => item.name === "") ? (
           <div className="col-span-4 m-auto text-3xl font-bold text-primary">
-            لا يوجد فرق
+            لا يوجد لاعبين
           </div>
         ) : null}
       </div>
@@ -116,4 +120,4 @@ const Clubs = () => {
   );
 };
 
-export default Clubs;
+export default Players;

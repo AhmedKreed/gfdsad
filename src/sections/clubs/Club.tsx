@@ -12,6 +12,7 @@ const Club = ({ id }: { id: number }) => {
       <div className="p-4 col-span-2">
         <div className="flex items-center gap-3 py-4 border-b border-b-[#CCCCCC]">
           <Image
+            unoptimized
             src={img}
             alt={"club"}
             width={64}
@@ -22,7 +23,9 @@ const Club = ({ id }: { id: number }) => {
         </div>
         <div className="mt-6 mb-8 flex border border-[#B3B3B3] rounded-lg text-sm text-primary font-semibold">
           <button
-            className={`flex-1 h-[40px] ${btn === 0 ? "bg-[#F2F2F2]" : ""}`}
+            className={`flex-1 h-[40px] ${
+              btn === 0 ? "bg-[#F2F2F2] rounded-r-lg" : ""
+            }`}
             onClick={() => setBtn(0)}
           >
             معلومات
@@ -43,7 +46,9 @@ const Club = ({ id }: { id: number }) => {
           </button>
           <div className="w-[1px] bg-[#4D4D4D]" />
           <button
-            className={`flex-1 h-[40px] ${btn === 3 ? "bg-[#F2F2F2]" : ""}`}
+            className={`flex-1 h-[40px] ${
+              btn === 3 ? "bg-[#F2F2F2] rounded-l-lg" : ""
+            }`}
             onClick={() => setBtn(3)}
           >
             انتقالات
@@ -52,10 +57,10 @@ const Club = ({ id }: { id: number }) => {
         <div className="p-4 mb-8 flex flex-col">
           <div className="flex text-sm text-primary font-medium bg-[#FCFCFD] rounded-lg">
             <p className="flex-1 py-[26px] px-4 border-b border-[#CCCCCC]">
-              {ClubInfo[btn].titles.created}
+              المحافظة : ------
             </p>
             <p className="flex-1 py-[26px] px-4 border-b border-[#CCCCCC]">
-              {ClubInfo[btn].titles.country}
+              النادي : ------
             </p>
           </div>
           {ClubInfo[btn].infos.map((item, index) => (
@@ -97,7 +102,13 @@ const Club = ({ id }: { id: number }) => {
             <p className="flex-1 ">أسم الملعب: سانتياغو برنابيو</p>
             <p className="flex-1">تأريخ البناء: 1955</p>
           </div>
-          <Image src={img1} alt={"stadium"} width={370} height={370} />
+          <Image
+            unoptimized
+            src={img1}
+            alt={"stadium"}
+            width={370}
+            height={370}
+          />
         </div>
       </div>
       <div className="md:col-span-1 col-span-2">

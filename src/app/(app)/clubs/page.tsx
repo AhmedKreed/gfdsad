@@ -1,5 +1,11 @@
+import Clubs from "@/sections/clubs/Clubs";
+
 const page = () => {
-  return <div>page</div>;
+  return (
+    <section className="paddings">
+      <Clubs />
+    </section>
+  );
 };
 
 export default page;

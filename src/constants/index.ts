@@ -22,16 +22,15 @@ export const NavLinks = [
   {
     id: 1,
     title: "أخبار",
-    links: [
-      { title: "المباريات", link: "/matches" },
-      { title: "الدوريات", link: "/leagues" },
-      { title: "اخر الاخبار", link: "/news" },
-    ],
+    link: "/news",
   },
-  { id: 2, title: "الفرق", link: "", links: [] },
-  { id: 3, title: "الأندية", link: "", links: [] },
-  { id: 4, title: "لاعبين", link: "", links: [] },
-  { id: 5, title: "الانشطه", link: "", links: [] },
+  { id: 2, title: "المباريات", link: "/matches" },
+  { id: 3, title: "الفرق", link: "/clubs" },
+
+  { id: 4, title: "لاعبين", link: "/players" },
+  { id: 5, title: "المسابقات", link: "/league" },
+  { id: 6, title: "حجز ملاعب", link: "/reservation" },
+  { id: 7, title: "طلبات", link: "/requests" },
 ];
 export const Matche = [
   {
@@ -500,7 +499,7 @@ export const TodaysNews = [
       img: news1,
       date: "١٢ مارس ٢٠٢٤ ١٤:٤٩",
       author: "تامر أبو سيدو",
-      link: "0",
+      link: "/news/0",
       title:
         "ليفربول ومانشستر سيتي | والد دياز يتمنى لو لم يعد من الخطف والحكم تأجل حتى مايو!",
       time: 5,
@@ -510,7 +509,7 @@ export const TodaysNews = [
       img: news2,
       date: "١٢ مارس ٢٠٢٤ ١٤:٤٩",
       author: "تامر أبو سيدو",
-      link: "1",
+      link: "/news/1",
       title: ` أخبار النصر اليوم | مفاجأة في اختيارات كاسترو لأجانب "العين"، ورونالدو يتحدى الجميع!`,
       time: 5,
     },
@@ -519,7 +518,7 @@ export const TodaysNews = [
       img: news3,
       date: "١٢ مارس ٢٠٢٤ ١٤:٤٩",
       author: "تامر أبو سيدو",
-      link: "2",
+      link: "/news/2",
       title: `جدول مباريات الدوري الإنجليزي 2023-2024، القنوات الناقلة والترتيب`,
       time: 5,
     },
@@ -530,7 +529,7 @@ export const TodaysNews = [
       img: news3,
       date: "١٢ مارس ٢٠٢٤ ١٤:٤٩",
       author: "تامر أبو سيدو",
-      link: "2",
+      link: "/news/2",
       title: ` أخبار النصر اليوم | مفاجأة في اختيارات كاسترو لأجانب "العين"، ورونالدو يتحدى الجميع!`,
       time: 5,
     },
@@ -539,7 +538,7 @@ export const TodaysNews = [
       img: news1,
       date: "١٢ مارس ٢٠٢٤ ١٤:٤٩",
       author: "تامر أبو سيدو",
-      link: "0",
+      link: "/news/0",
       title: `جدول مباريات الدوري الإنجليزي 2023-2024، القنوات الناقلة والترتيب`,
       time: 5,
     },
@@ -548,7 +547,7 @@ export const TodaysNews = [
       img: news2,
       date: "١٢ مارس ٢٠٢٤ ١٤:٤٩",
       author: "تامر أبو سيدو",
-      link: "1",
+      link: "/news/1",
       title:
         "ليفربول ومانشستر سيتي | والد دياز يتمنى لو لم يعد من الخطف والحكم تأجل حتى مايو!",
       time: 5,
@@ -725,4 +724,12 @@ export const ClubInfo = [
       "رئيس النادي:  الاسماء نفذت",
     ],
   },
+];
+export const Playersd = [
+  { id: 1, name: "شوش بان باللوبان", age: 16, club: "عصبان", team: "النصر" },
+  { id: 2, name: "شيش بيش", age: 19, club: "براك", team: "الاهلي" },
+  { id: 3, name: "يعقوب قمرالدين", age: 16, club: "مبكبة", team: "الهلال" },
+  { id: 4, name: "خالد كشميري", age: 16, club: "بوريك", team: "النصر" },
+  { id: 5, name: "خضر كرويتة", age: 16, club: "بازين", team: "الاهلي" },
+  { id: 6, name: "نابليون بونابرت", age: 37, club: "بيتزا", team: "الهلال" },
 ];

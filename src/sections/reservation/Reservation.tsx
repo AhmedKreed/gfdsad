@@ -4,12 +4,19 @@ import logo from "@/assets/Icon (1).png";
 import stadiums from "@/assets/image20(1).png";
 import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
-import Link from "next/link";
+import { ToastWithTitle } from "@/components/buttons/Toast";
 
 const Reservation = () => {
-  const [date, setDate] = useState<any>();
+  const calender = new Date();
+  const [date, setDate] = useState<any>(new Date());
+  const [reserveDate, setReserveDate] = useState<any>();
   const [stadium, setStadium] = useState("6V6");
   const [time, setTime] = useState("90 دقيقة");
+  const [inputValue, setInputValue] = useState("");
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="grid lg:grid-cols-3 grid-cols-1 gap-8">
       <div className="col-span-2">
@@ -54,8 +61,9 @@ const Reservation = () => {
           اختر التاريخ والوقت
         </h1>
         <h3 className="text-bold text-lg font-bold mb-6">التاريخ</h3>
-        <form action="">
+        <form action="" onSubmit={(e) => handleSubmit(e)} className="relative">
           <Calendar
+            fromDate={calender}
             required
             mode="single"
             selected={date}
@@ -138,11 +146,35 @@ const Reservation = () => {
               120 دقيقة
             </div>
           </div>
-          <div className="bg-button text-white rounded-lg flex justify-center w-full py-[10px]">
-            <Link href={"/payment"} className="w-full text-center">
-              أكمل الدفع
-            </Link>
+          <div className="flex flex-col justify-start gap-[6px] mb-[20px]">
+            <label
+              htmlFor="email"
+              className="text-[#4D4D4D] text-sm font-medium"
+            >
+              رقم الهاتف
+              <span className="text-xs text-red-600">
+                {" "}
+                *تأكد من كتابة رقم الهاتف بشكل صحيح
+              </span>
+            </label>
+            <input
+              className="rounded-lg border border-[#B3B3B3] py-[10px] px-[14px] outline-none"
+              type="text"
+              inputMode="numeric"
+              required
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              id="number"
+              name="number"
+              placeholder="ادخل رقم الهاتف"
+            />
           </div>
+
+          <ToastWithTitle
+            date={date.toLocaleDateString()}
+            stadium={"سوكر وورلد"}
+            isDisabled={inputValue ? false : true}
+          />
         </form>
       </nav>
     </section>

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import logo from "@/assets/Logo.png";
-import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center flex-1 padding-Y">
+    <section className="w-full h-full flex justify-center flex-1 padding-Y pb-0">
       <div>
         <Image
           unoptimized
@@ -15,10 +14,11 @@ const page = () => {
           className="object-contain mx-auto mb-6"
         />
         <div className="text-center mb-8">
-          <h1 className="text-primary text-3xl font-semibold mb-3">
-            تسجيل دخول لحسابك
-          </h1>
-          <p className="text-secondary">اهلا بك! يرجى ادخال البيانات التالية</p>
+          <h1 className="text-primary text-3xl font-semibold mb-3">طلبات</h1>
+          <p className="text-secondary">
+            {" "}
+            اهلا بك! يرجى ادخال البيانات التالية لارسال طلبك
+          </p>
         </div>
 
         <form
@@ -61,41 +61,29 @@ const page = () => {
             />
           </div>
 
-          <div className="flex justify-between mb-6">
-            <div className="flex items-center gap-2 ">
-              <input
-                type="checkbox"
-                id="checkbox"
-                name="checkbox"
-                value="1"
-                className="w-4 h-4"
-              />
-              <label htmlFor="checkbox" className="text-sm">
-                {" "}
-                تذكرني
-              </label>
-            </div>
-            <Link
-              href={"/login/forgot"}
-              className="text-[#135CB8] text-sm font-medium "
+          <div className="flex flex-col justify-start gap-[6px] mb-6">
+            <label
+              htmlFor="textarea"
+              className="text-[#4D4D4D] text-[14px] font-medium"
             >
-              نسيت كلمة المرور
-            </Link>
+              الطلب
+            </label>
+            <textarea
+              className="rounded-lg min-h-[200px] border border-[#B3B3B3] py-[10px] px-[14px] sm:w-[360px] w-[300px] outline-none"
+              name="textarea"
+              id="textarea"
+              autoComplete="off"
+              placeholder="اكتب طلبك"
+              required
+            />
           </div>
 
           <button className="rounded-lg text-center bg-button p-[10px] text-white font-semibold mb-8">
-            تسجيل دخول
+            ارسال الطلب
           </button>
-
-          <p className="text-center text-primary text-sm">
-            ليس لديك حساب مسبقاً{" "}
-            <Link className=" text-[#135CB8]" href={"/signup"}>
-              إنشاء حساب
-            </Link>
-          </p>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

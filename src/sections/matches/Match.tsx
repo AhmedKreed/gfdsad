@@ -65,7 +65,10 @@ const Match = ({ id }: { id: number }) => {
             <p className="text-primary text-bold text-base sm:text-lg ">
               {Matche[id].teams.theGuest.goal.number}
             </p>
-            <div className="flex flex-col items-center">
+            <Link
+              className="flex flex-col items-center"
+              href={`/clubs/${Matche[id].id}`}
+            >
               <Image
                 unoptimized
                 src={Matche[id].teams.theGuest.img}
@@ -77,7 +80,7 @@ const Match = ({ id }: { id: number }) => {
               <h3 className="text-[#4D4D4D] font-bold text-left">
                 {Matche[id].teams.theGuest.name}
               </h3>
-            </div>
+            </Link>
           </div>
           <div className="flex justify-between items-center text-secondary font-medium text-sm relative gap-[90px]">
             <p className="max-w-[140px]">الحكم/داني ماكيلي</p>

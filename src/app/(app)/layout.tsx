@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import { Toaster } from "@/components/ui/toaster";
 
 const layout = ({
   children,
@@ -11,6 +12,7 @@ const layout = ({
       <NavBar />
       {children}
       <Footer />
+      <Toaster />
     </main>
   );
 };

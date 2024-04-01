@@ -22,6 +22,7 @@ const page = ({ params }: { params: { id: string } }) => {
   for (let index = 0; index < 10; index++) {
     goals.push(goal);
   }
+
   return (
     <section className="grid md:grid-cols-3 grid-cols-1 md:gap-8 paddings">
       <div className="col-span-2 bg-[#FCFCFD] p-4 rounded-lg md:m-0 mb-8">
@@ -42,16 +43,24 @@ const page = ({ params }: { params: { id: string } }) => {
             </p>
           ))}
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col">
           {leagues.map((item, index) => (
             <div
               key={index}
-              className="flex items-center text-primary font-semibold text-sm"
+              className={`flex py-[6px] pr-1 items-center text-primary font-semibold text-sm ${
+                index < 2
+                  ? "border-r-[3px] border-[#2E7DE1]"
+                  : index === 2
+                  ? "border-r-[3px] border-[#DC6803]"
+                  : index > 7
+                  ? "border-r-[3px] border-[#D92D20]"
+                  : "mr-[3px]"
+              }`}
             >
               <p className="font-bold">{index + 1}</p>
-              <div className="flex items-center gap-4 flex-1">
+              <div className="flex items-center gap-2 flex-1">
                 <Image
-                  className={`${index > 8 ? "mr-6" : "mr-8"}`}
+                  className={`${index > 8 ? "mr-2" : "mr-4"}`}
                   src={item.img}
                   alt={"club"}
                   width={24}
@@ -60,7 +69,7 @@ const page = ({ params }: { params: { id: string } }) => {
                 />
                 <p className="text-[#4D4D4D]">{item.name}</p>
               </div>
-              <div className="flex gap-8 items-center">
+              <div className="flex gap-8 items-center ml-[-6px]">
                 {item.scores.map((score, i) => (
                   <p
                     key={i}
@@ -120,9 +129,7 @@ const page = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-primary mb-6">
-            أخر المباريات
-          </h1>
+          <h1 className="text-2xl font-bold text-primary mb-6">الهدافين</h1>
           <div className="p-4 flex flex-col gap-6 bg-[#FCFCFD] rounded-lg shadow-md">
             <div className="flex gap-3 text-sm text-primary font-bold">
               <p>الترتيب</p>

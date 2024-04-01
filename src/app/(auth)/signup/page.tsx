@@ -48,14 +48,15 @@ const page = () => {
               htmlFor="email"
               className="text-[#4D4D4D] text-[14px] font-medium"
             >
-              البريد الإلكتروني
+              رقم الهاتف
             </label>
             <input
               className="rounded-lg border border-[#B3B3B3] py-[10px] px-[14px] outline-none"
               name="email"
-              type="email"
+              type="number"
+              autoComplete="off"
               id="email"
-              placeholder="ادخل البريد الإلكتروني"
+              placeholder="ادخل رقم الهاتف"
               required
             />
           </div>
@@ -65,31 +66,15 @@ const page = () => {
               htmlFor="password"
               className="text-[#4D4D4D] text-[14px] font-medium"
             >
-              كلمة المرور
+              الرقم المدني
             </label>
             <input
               className="rounded-lg border border-[#B3B3B3] py-[10px] px-[14px] sm:w-[360px] w-[300px] outline-none"
               name="password"
               id="password"
-              type="password"
-              placeholder="أدخل كلمة المرور"
-              required
-            />
-          </div>
-
-          <div className="flex flex-col justify-start gap-[6px] mb-6">
-            <label
-              htmlFor="password"
-              className="text-[#4D4D4D] text-[14px] font-medium"
-            >
-              اعد كلمة المرور
-            </label>
-            <input
-              className="rounded-lg border border-[#B3B3B3] py-[10px] px-[14px] sm:w-[360px] w-[300px] outline-none"
-              name="password1"
-              id="password1"
-              type="password"
-              placeholder="أدخل كلمة المرور"
+              type="number"
+              autoComplete="off"
+              placeholder="أدخل الرقم المدني"
               required
             />
           </div>

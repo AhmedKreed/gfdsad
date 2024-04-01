@@ -8,11 +8,6 @@ const Home2 = () => (
     <div className="max-sm:mx-auto mr-auto">
       <ShowMore link={"/news"} />
     </div>
-    <News title={"الانتقالات"} news={SpecialNews[1]} limit={3} />
-
-    <div className="max-sm:mx-auto mr-auto">
-      <ShowMore link={"/news"} />
-    </div>
   </div>
 );
 
