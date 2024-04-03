@@ -68,7 +68,7 @@ const Players = () => {
             type="text"
             id="text"
             name="text"
-            placeholder="بحث"
+            placeholder="اللاعب"
             className="bg-transparent p-3 border-2 border-[#CCCCCC] w-full rounded-3xl outline-none"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}

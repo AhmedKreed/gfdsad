@@ -15,7 +15,7 @@ const page = () => {
         />
         <div className="text-center mb-8">
           <h1 className="text-primary text-3xl font-semibold mb-3">طلبات</h1>
-          {/* <p className="text-secondary"> اهلا بك!</p> */}
+          <p className="text-secondary"> اهلا بك!</p>
         </div>
 
         <form
@@ -34,7 +34,7 @@ const page = () => {
               name="textarea2"
               id="textarea2"
               autoComplete="off"
-              placeholder="ادخل مقترحك"
+              placeholder="ادخل مقترحك\شكواك\طلب"
             />
           </div>
 
