@@ -30,7 +30,6 @@ export const NavLinks = [
   { id: 4, title: "لاعبين", link: "/players" },
   { id: 5, title: "المسابقات", link: "/league" },
   { id: 6, title: "حجز ملاعب", link: "/reservation" },
-  { id: 7, title: "طلبات", link: "/requests" },
 ];
 export const Matche = [
   {
@@ -38,7 +37,7 @@ export const Matche = [
     isPlayed: false,
     isPlaying: true,
     league: "الدوري الإنجليزي  الممتاز",
-    Time: "8:55",
+    Time: "1 : 2",
     img: leagueimg1,
     teams: {
       theGuest: {
@@ -58,7 +57,7 @@ export const Matche = [
     isPlayed: true,
     isPlaying: false,
     league: "الدوري الإنجليزي  الممتاز",
-    Time: "18:45",
+    Time: "0 : 2",
     img: leagueimg1,
     teams: {
       theGuest: {
@@ -98,7 +97,7 @@ export const Matche = [
     isPlayed: false,
     isPlaying: true,
     league: "الدوري الأسباني",
-    Time: "8:55",
+    Time: "0 : 0",
     img: leagueimg3,
     teams: {
       theGuest: {
@@ -695,17 +694,14 @@ export const ClubInfo = [
   {
     titles: { country: "الدولة: أسباني", created: "تاريخ التأسيس: 1902" },
     infos: [
-      "رئيس النادي: فلورنتينو بيريز ",
-      "نائب رئيس: فلورنتينو بيريز ",
-      "رئيس النادي: فلورنتينو بيريز ",
-    ],
-  },
-  {
-    titles: { country: "الدولة: أسباني", created: "تاريخ التأسيس: 1902" },
-    infos: [
-      "طباخ النادي :فلورينتينو بيريز",
-      "دكتور النادي : فلورنتينو بيريز ",
-      "عامل نظافة النادي : فلورنتينو بيريز ",
+      {
+        title: "مجلس الادارة",
+        info: ["احمد كريد", "احمد كريد", "احمد كريد", "احمد كريد"],
+      },
+      {
+        title: "جهاز فني",
+        info: ["احمد كريد", "احمد كريد", "احمد كريد", "احمد كريد"],
+      },
     ],
   },
   {
@@ -714,6 +710,14 @@ export const ClubInfo = [
       "رئيس النادي: يعقوب قمرالدين",
       "نائب رئيس: خالد كشميري",
       "رئيس النادي: خضر كرويته",
+    ],
+  },
+  {
+    titles: { country: "الدولة: أسباني", created: "تاريخ التأسيس: 1902" },
+    infos: [
+      "رئيس النادي: الاسماء نفذت",
+      "نائب رئيس:  الاسماء نفذت",
+      "رئيس النادي:  الاسماء نفذت",
     ],
   },
   {

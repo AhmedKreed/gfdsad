@@ -4,13 +4,21 @@ import img from "@/assets/image4.png";
 import { useState } from "react";
 import { ClubInfo } from "@/constants";
 import img1 from "@/assets/image 18.png";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import Link from "next/link";
+
 const Club = ({ id }: { id: number }) => {
   const [btn, setBtn] = useState(0);
   const x = ["", "", "", "", "", "", "", "", "", "", ""];
   return (
     <section className="grid md:grid-cols-3 grid-cols-1 gap-8 mb-8">
       <div className="p-4 col-span-2">
-        <div className="flex items-center gap-3 py-4 border-b border-b-[#CCCCCC]">
+        <div className="flex sm:flex-row flex-col items-center gap-3 py-4 border-b border-b-[#CCCCCC]">
           <Image
             unoptimized
             src={img}
@@ -63,18 +71,51 @@ const Club = ({ id }: { id: number }) => {
               النادي : ------
             </p>
           </div>
-          {ClubInfo[btn].infos.map((item, index) => (
-            <p
-              key={index}
-              className={`py-[26px] px-4 text-sm text-primary font-medium ${
-                ClubInfo[btn].infos.length - 1 === index
-                  ? ""
-                  : "border-b border-[#CCCCCC]"
-              }`}
-            >
-              {item}
-            </p>
-          ))}
+
+          {btn === 0 ? (
+            <div>
+              <Accordion type="single" collapsible>
+                {ClubInfo[btn].infos.map((item: any, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="py-[10px] px-4 text-sm text-primary font-semibold border-b border-[#CCCCCC]"
+                  >
+                    <AccordionTrigger>{item.title}</AccordionTrigger>
+                    {item.info.map((item: any, i: number) => (
+                      <AccordionContent
+                        key={i}
+                        className="text-sm text-secondary font-medium"
+                      >
+                        {item}
+                      </AccordionContent>
+                    ))}
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              <div className="flex">
+                <Link
+                  href={""}
+                  className="py-[26px] w-full px-4 text-sm text-primary font-semibold border-b border-[#CCCCCC]"
+                >
+                  لاعبين
+                </Link>
+              </div>
+            </div>
+          ) : (
+            ClubInfo[btn].infos.map((item: any, index) => (
+              <p
+                key={index}
+                className={`py-[26px] px-4 text-sm text-primary font-medium ${
+                  ClubInfo[btn].infos.length - 1 === index
+                    ? ""
+                    : "border-b border-[#CCCCCC]"
+                }`}
+              >
+                {item}
+              </p>
+            ))
+          )}
         </div>
       </div>
       <div className="md:col-span-1 col-span-2">
@@ -96,9 +137,9 @@ const Club = ({ id }: { id: number }) => {
         </div>
       </div>
       <div className="col-span-2">
-        <h1 className="text-2xl font-bold text-[#1A1A1A] mb-8">الملعب</h1>
+        <h1 className="text-2xl font-bold text-primary mb-8">الملعب</h1>
         <div className="p-4 bg-[#FCFCFD] rounded-lg">
-          <div className="flex md:flex-row flex-col md:gap-0 gap-3 mb-8 border-b border-b-[#CCCCCC] text-sm font-medium items-center text-[#1A1A1A] py-[26px] px-6">
+          <div className="flex md:flex-row flex-col md:gap-0 gap-3 mb-8 border-b border-b-[#CCCCCC] text-sm font-medium items-center text-primary py-[26px] px-6">
             <p className="flex-1 ">أسم الملعب: سانتياغو برنابيو</p>
             <p className="flex-1">تأريخ البناء: 1955</p>
           </div>
@@ -108,37 +149,39 @@ const Club = ({ id }: { id: number }) => {
             alt={"stadium"}
             width={370}
             height={370}
+            className="w-full h-full object-contain"
           />
         </div>
       </div>
       <div className="md:col-span-1 col-span-2">
+        <h1 className="text-2xl font-bold text-primary mb-8">المسابقات</h1>
         <div className="p-4 bg-[#FCFCFD] rounded-lg">
           <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
-            <p className="text-[#1A1A1A]">كأس العالم للأندية</p>
+            <p className="text-primary">كأس العالم للأندية</p>
             <p className="text=secondary">2014 2016 2017 2018 2022</p>
           </div>
           <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
-            <p className="text-[#1A1A1A]">كأس العالم للأندية</p>
+            <p className="text-primary">كأس العالم للأندية</p>
             <p className="text=secondary">2014 2016 2017 2018 2022</p>
           </div>
           <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
-            <p className="text-[#1A1A1A]">كأس العالم للأندية</p>
+            <p className="text-primary">كأس العالم للأندية</p>
             <p className="text=secondary">2014 2016 2017 2018 2022</p>
           </div>
           <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
-            <p className="text-[#1A1A1A]">كأس العالم للأندية</p>
+            <p className="text-primary">كأس العالم للأندية</p>
             <p className="text=secondary">2014 2016 2017 2018 2022</p>
           </div>
           <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
-            <p className="text-[#1A1A1A]">كأس العالم للأندية</p>
+            <p className="text-primary">كأس العالم للأندية</p>
             <p className="text=secondary">2014 2016 2017 2018 2022</p>
           </div>
           <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
-            <p className="text-[#1A1A1A]">كأس العالم للأندية</p>
+            <p className="text-primary">كأس العالم للأندية</p>
             <p className="text=secondary">2014 2016 2017 2018 2022</p>
           </div>
           <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
-            <p className="text-[#1A1A1A]">كأس العالم للأندية</p>
+            <p className="text-primary">كأس العالم للأندية</p>
             <p className="text=secondary">2014 2016 2017 2018 2022</p>
           </div>
         </div>

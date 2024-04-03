@@ -61,38 +61,9 @@ const page = () => {
             />
           </div>
 
-          <div className="flex justify-between mb-6">
-            <div className="flex items-center gap-2 ">
-              <input
-                type="checkbox"
-                id="checkbox"
-                name="checkbox"
-                value="1"
-                className="w-4 h-4"
-              />
-              <label htmlFor="checkbox" className="text-sm">
-                {" "}
-                تذكرني
-              </label>
-            </div>
-            <Link
-              href={"/login/forgot"}
-              className="text-[#135CB8] text-sm font-medium "
-            >
-              نسيت كلمة المرور
-            </Link>
+          <div className="rounded-lg text-center bg-button p-[10px] text-white font-semibold mb-8">
+            <Link href={"/requests"}>تسجيل دخول</Link>
           </div>
-
-          <button className="rounded-lg text-center bg-button p-[10px] text-white font-semibold mb-8">
-            تسجيل دخول
-          </button>
-
-          <p className="text-center text-primary text-sm">
-            ليس لديك حساب مسبقاً{" "}
-            <Link className=" text-[#135CB8]" href={"/signup"}>
-              إنشاء حساب
-            </Link>
-          </p>
         </form>
       </div>
     </div>

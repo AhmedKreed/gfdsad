@@ -25,13 +25,9 @@ const Player = ({ id }: { id: number }) => {
               <h3 className="font-medium"> الفريق </h3>
               <p className="text-[#666666]">{Playersd[id].team}</p>
             </div>
-            <div className="sm:w-1/2 w-full py-4 px-6 border-b border-b-[#CCCCCC]">
+            <div className="w-full py-4 px-6 border-b border-b-[#CCCCCC]">
               <h3 className="font-medium"> النادي </h3>
               <p className="text-[#666666]">{Playersd[id].club}</p>
-            </div>
-            <div className="sm:w-1/2 w-full py-4 px-6 border-b border-b-[#CCCCCC]">
-              <h3 className="font-medium"> المسابقات </h3>
-              <p className="text-[#666666]">المسابقات</p>
             </div>
           </div>
         </div>
@@ -51,6 +47,39 @@ const Player = ({ id }: { id: number }) => {
               <p className="text-sm text-[#4D4D4D]">حارس</p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="md:col-span-1 col-span-2">
+        <h1 className="text-2xl font-bold text-primary mb-8">المسابقات</h1>
+        <div className="p-4 bg-[#FCFCFD] rounded-lg">
+          <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
+            <p className="text-primary">كأس العالم للأندية</p>
+            <p className="text=secondary">2014 2016 2017 2018 2022</p>
+          </div>
+          <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
+            <p className="text-primary">كأس العالم للأندية</p>
+            <p className="text=secondary">2014 2016 2017 2018 2022</p>
+          </div>
+          <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
+            <p className="text-primary">كأس العالم للأندية</p>
+            <p className="text=secondary">2014 2016 2017 2018 2022</p>
+          </div>
+          <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
+            <p className="text-primary">كأس العالم للأندية</p>
+            <p className="text=secondary">2014 2016 2017 2018 2022</p>
+          </div>
+          <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
+            <p className="text-primary">كأس العالم للأندية</p>
+            <p className="text=secondary">2014 2016 2017 2018 2022</p>
+          </div>
+          <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
+            <p className="text-primary">كأس العالم للأندية</p>
+            <p className="text=secondary">2014 2016 2017 2018 2022</p>
+          </div>
+          <div className="py-4 px-6 border-b border-b-[#CCCCCC] text-sm">
+            <p className="text-primary">كأس العالم للأندية</p>
+            <p className="text=secondary">2014 2016 2017 2018 2022</p>
+          </div>
         </div>
       </div>
     </section>

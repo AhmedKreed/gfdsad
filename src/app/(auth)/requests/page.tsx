@@ -3,8 +3,8 @@ import logo from "@/assets/Logo.png";
 
 const page = () => {
   return (
-    <section className="w-full h-full flex justify-center flex-1 padding-Y pb-0">
-      <div>
+    <section className="w-full h-full flex justify-center items-center flex-1 padding-Y pb-0">
+      <div className="h-fit">
         <Image
           unoptimized
           src={logo}
@@ -15,49 +15,42 @@ const page = () => {
         />
         <div className="text-center mb-8">
           <h1 className="text-primary text-3xl font-semibold mb-3">طلبات</h1>
-          <p className="text-secondary">
-            {" "}
-            اهلا بك! يرجى ادخال البيانات التالية لارسال طلبك
-          </p>
+          {/* <p className="text-secondary"> اهلا بك!</p> */}
         </div>
 
         <form
           action=""
           className="flex flex-col justify-stretch sm:w-[360px] w-[300px]"
         >
-          <div className="flex flex-col justify-start gap-[6px] mb-[20px]">
+          <div className="flex flex-col justify-start gap-[6px] mb-6">
             <label
-              htmlFor="email"
+              htmlFor="textarea2"
               className="text-[#4D4D4D] text-[14px] font-medium"
             >
-              رقم الهاتف
+              المقترح | الشكوى | الطلب
             </label>
-            <input
-              className="rounded-lg border border-[#B3B3B3] py-[10px] px-[14px] outline-none"
-              name="email"
-              type="number"
+            <textarea
+              className="rounded-lg min-h-[200px] border border-[#B3B3B3] py-[10px] px-[14px] sm:w-[360px] w-[300px] outline-none"
+              name="textarea2"
+              id="textarea2"
               autoComplete="off"
-              id="email"
-              placeholder="ادخل رقم الهاتف"
-              required
+              placeholder="ادخل مقترحك"
             />
           </div>
 
-          <div className="flex flex-col justify-start gap-[6px] mb-6">
+          {/* <div className="flex flex-col justify-start gap-[6px] mb-6">
             <label
-              htmlFor="password1"
+              htmlFor="textarea1"
               className="text-[#4D4D4D] text-[14px] font-medium"
             >
-              الرقم المدني
+              الشكوى
             </label>
-            <input
-              className="rounded-lg border border-[#B3B3B3] py-[10px] px-[14px] sm:w-[360px] w-[300px] outline-none"
-              name="password1"
-              id="password1"
-              type="number"
+            <textarea
+              className="rounded-lg min-h-[200px] border border-[#B3B3B3] py-[10px] px-[14px] sm:w-[360px] w-[300px] outline-none"
+              name="textarea1"
+              id="textarea1"
               autoComplete="off"
-              placeholder="أدخل الرقم المدني"
-              required
+              placeholder="اكتب شكواك"
             />
           </div>
 
@@ -74,12 +67,11 @@ const page = () => {
               id="textarea"
               autoComplete="off"
               placeholder="اكتب طلبك"
-              required
             />
-          </div>
+          </div> */}
 
           <button className="rounded-lg text-center bg-button p-[10px] text-white font-semibold mb-8">
-            ارسال الطلب
+            ارسال
           </button>
         </form>
       </div>

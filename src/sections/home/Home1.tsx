@@ -61,7 +61,11 @@ const Home1 = () => (
                       : "bg-[#F9F5FF] text-[#135CB8]"
                   } text-xs py-[2px] px-2 rounded-2xl`}
                 >
-                  {item.isPlaying ? `${item.Time} | مباشر` : item.Time}
+                  {item.isPlayed
+                    ? item.Time
+                    : item.isPlaying
+                    ? `مباشر`
+                    : item.Time}
                 </span>
               </div>
               <div className="flex justify-between px-2 relative">
@@ -125,9 +129,9 @@ const Home1 = () => (
       <NewsSlider news={SpecialNews} title="أخبار مميزة" />
     </div>
     <div className="flex flex-col rows">
-      <h1 className="text-primary mb-8 text-2xl font-bold">الدوريات</h1>
+      <h1 className="text-primary mb-8 text-2xl font-bold">المسابقات</h1>
       <div className="p-2 bg-[#FCFCFD] flex flex-col gap-10 mr-8 md:m-0">
-        <h3 className="text-primary font-bold">الدوريات العالمية</h3>
+        <h3 className="text-primary font-bold">المسابقات الجارية</h3>
         <div className="lines" />
         {Leagues.map((league) => (
           <Link

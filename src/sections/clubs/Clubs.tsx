@@ -52,9 +52,7 @@ const Clubs = () => {
     .filter(
       (item) =>
         !submit ||
-        (item.team.slice(0, submit.length).toLowerCase() ===
-          submit.toLowerCase() &&
-          item.team.toLowerCase() !== submit.toLowerCase())
+        item.team.slice(0, submit.length).toLowerCase() === submit.toLowerCase()
     );
 
   return (

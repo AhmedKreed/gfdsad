@@ -8,6 +8,8 @@ import leftArrow from "@/assets/Left arrow.png";
 import rightArrow from "@/assets/Right arrow (1).png";
 import { leagueimg1 } from "@/assets";
 import { Matche } from "@/constants";
+import { useDate } from "@/hooks/useDate";
+
 const options = [
   { value: "كرة قدم", label: "كرة قدم" },
   { value: "كرة السلة", label: "كرة السلة" },
@@ -26,8 +28,7 @@ const weekDays = [
   "الجمعة",
 ];
 const Matches = () => {
-  const now = new Date();
-  const day = now.getDay();
+  const { day } = useDate();
   const [sports, setSports] = useState<any>();
   const [arrows, setArrow] = useState<number>(day + 1);
   const onInputChange = (x: any, { action, prevInputValue }: any) => {
@@ -195,17 +196,18 @@ const Matches = () => {
                         {item.teams.theHost.name}
                       </p>
                     </div>
-                    <span
+                    <div
                       className={`${
                         item.isPlayed
                           ? "bg-[#E6E6E6] text-secondary"
                           : item.isPlaying
-                          ? "bg-[#FEF3F2] text-[#B42318]"
+                          ? "bg-[#FEF3F2] text-[#B42318] gap-2"
                           : "bg-[#F9F5FF] text-[#135CB8]"
-                      } text-xs py-1 px-4 rounded-2xl h-fit absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}
+                      }  py-1 px-4 rounded-2xl text-center h-fit absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col justify-center`}
                     >
-                      1:1
-                    </span>
+                      <span>{item.Time}</span>
+                      <span>{item.isPlaying && "مباشر"}</span>
+                    </div>
                     <div className="flex items-center sm:gap-2 sm:flex-row gap-4 flex-col relative">
                       <p className="font-medium text-[#4D4D4D] sm:text-sm text-xl">
                         {item.teams.theGuest.name}
@@ -263,17 +265,18 @@ const Matches = () => {
                         {item.teams.theHost.name}
                       </p>
                     </div>
-                    <span
+                    <div
                       className={`${
                         item.isPlayed
                           ? "bg-[#E6E6E6] text-secondary"
                           : item.isPlaying
-                          ? "bg-[#FEF3F2] text-[#B42318]"
+                          ? "bg-[#FEF3F2] text-[#B42318] gap-2"
                           : "bg-[#F9F5FF] text-[#135CB8]"
-                      } text-xs py-1 px-4 rounded-2xl h-fit absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}
+                      }  py-1 px-4 rounded-2xl text-center h-fit absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col justify-center`}
                     >
-                      {item.isPlaying ? `${item.Time} | مباشر` : item.Time}
-                    </span>
+                      <span>{item.Time}</span>
+                      <span>{item.isPlaying && "مباشر"}</span>
+                    </div>
                     <div className="flex items-center sm:gap-2 sm:flex-row gap-4 flex-col relative">
                       <p className="font-medium text-[#4D4D4D] sm:text-sm text-xl">
                         {item.teams.theGuest.name}

@@ -1,6 +1,5 @@
 "use client";
 import { NavLinks } from "@/constants";
-import SignUp from "./buttons/SignUp";
 import Image from "next/image";
 import { useState } from "react";
 import logo from "@/assets/Logo.png";
@@ -44,9 +43,6 @@ const NavBar = () => {
           <div onClick={() => setToggleLinks(false)}>
             <LogIn />
           </div>
-          <div onClick={() => setToggleLinks(false)}>
-            <SignUp />
-          </div>
         </div>
       </ul>
       {/* DESKTOP DEVICES */}
@@ -84,7 +80,6 @@ const NavBar = () => {
       </div>
       <div className="max-lg:hidden mr-auto flex gap-[6px]">
         <LogIn />
-        <SignUp />
       </div>
     </nav>
   );

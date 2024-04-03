@@ -58,9 +58,11 @@ const Match = ({ id }: { id: number }) => {
                   : "bg-[#F9F5FF] text-[#135CB8]"
               } sm:text-sm text-xs text-center font-medium py-2 px-6 rounded-2xl h-fit`}
             >
-              {Matche[id].isPlaying
-                ? `${Matche[id].Time} | مباشر`
-                : Matche[id].Time}
+              {Matche[id].isPlayed
+                ? "لعبت"
+                : Matche[id].isPlaying
+                ? `مباشر`
+                : "ستلعب : 18:50"}
             </span>
             <p className="text-primary text-bold text-base sm:text-lg ">
               {Matche[id].teams.theGuest.goal.number}
