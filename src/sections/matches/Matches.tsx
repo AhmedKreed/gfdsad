@@ -7,7 +7,6 @@ import makeAnimated from "react-select/animated";
 import leftArrow from "@/assets/Left arrow.png";
 import rightArrow from "@/assets/Right arrow (1).png";
 import { leagueimg1 } from "@/assets";
-import { Matche } from "@/constants";
 import { useDate } from "@/hooks/useDate";
 
 const options = [
@@ -27,10 +26,10 @@ const weekDays = [
   "الخميس",
   "الجمعة",
 ];
-const Matches = () => {
+const Matches = ({ Matche }: { Matche: any }) => {
   const { day } = useDate();
   const [sports, setSports] = useState<any>();
-  const [arrows, setArrow] = useState<number>(day + 1);
+  const [arrows, setArrow] = useState<number>(day + 1 === 7 ? 0 : day + 1);
   const onInputChange = (x: any, { action, prevInputValue }: any) => {
     if (action === "select-option") {
       setSports(x);
@@ -177,7 +176,7 @@ const Matches = () => {
               </Link>
             </div>
             <div>
-              {Matche.map((item) => (
+              {Matche.map((item: any) => (
                 <div key={item.id} className=" flex flex-col gap-8 mt-8">
                   <Link
                     className="p-2 flex sm:flex-row flex-col justify-between items-center relative gap-24"
@@ -246,7 +245,7 @@ const Matches = () => {
               </h1>
             </Link>
             <div>
-              {Matche.map((item) => (
+              {Matche.map((item: any) => (
                 <div key={item.id} className=" flex flex-col gap-8 mt-8">
                   <Link
                     className="p-2 flex sm:flex-row flex-col justify-between items-center relative gap-24"

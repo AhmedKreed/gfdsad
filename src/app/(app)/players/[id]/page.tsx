@@ -1,10 +1,12 @@
-import Player from "@/sections/players/Player";
-
+import { Playersd } from "@/constants";
+import { PlayerInfo, PlayerLeagues, PlayerTeam } from "@/components/player";
 const page = ({ params }: { params: { id: string } }) => {
   const ID = Number(params.id);
   return (
     <section className="paddings">
-      <Player id={ID - 1} />
+      <PlayerInfo Playersd={Playersd[ID]} />
+      <PlayerTeam />
+      <PlayerLeagues />
     </section>
   );
 };

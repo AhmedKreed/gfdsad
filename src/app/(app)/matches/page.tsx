@@ -1,9 +1,9 @@
 import Matches from "@/sections/matches/Matches";
-
+import { Matche } from "@/constants";
 const page = () => {
   return (
     <section className="paddings">
-      <Matches />
+      <Matches Matche={Matche} />
     </section>
   );
 };

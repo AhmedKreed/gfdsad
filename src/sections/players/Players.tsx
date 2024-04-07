@@ -1,5 +1,4 @@
 "use client";
-import { Playersd } from "@/constants";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -20,7 +19,7 @@ type ClubType = {
   value: string;
   label: string;
 }[];
-const Players = () => {
+const Players = ({ Playersd }: { Playersd: any }) => {
   const [clubs, setClubs] = useState<ClubType>();
   const [inputValue, setInputValue] = useState<string>("");
   const [submit, setSubmit] = useState<string>();
@@ -46,11 +45,11 @@ const Players = () => {
   const clubb = clubs ? clubs.map((x) => x.label) : clubs;
 
   const playersDate = Playersd.filter(
-    (item) => !clubb || clubb.includes(item.club)
+    (item: any) => !clubb || clubb.includes(item.club)
   )
-    .filter((item) => !clubb || clubb.includes(item.club))
+    .filter((item: any) => !clubb || clubb.includes(item.club))
     .filter(
-      (item) =>
+      (item: any) =>
         !submit ||
         (item.name.slice(0, submit.length).toLowerCase() ===
           submit.toLowerCase() &&
@@ -91,8 +90,8 @@ const Players = () => {
         />
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
-        {playersDate.map((item) => (
-          <Link key={`${item.id}`} href={`/players/${item.id}`}>
+        {playersDate.map((item: any) => (
+          <Link key={`${item.id}`} href={`/players/${item.id - 1}`}>
             <Image
               unoptimized
               src={img}
@@ -110,7 +109,7 @@ const Players = () => {
             </div>
           </Link>
         ))}
-        {playersDate.every((item) => item.name === "") ? (
+        {playersDate.every((item: any) => item.name === "") ? (
           <div className="col-span-4 m-auto text-3xl font-bold text-primary">
             لا يوجد لاعبين
           </div>

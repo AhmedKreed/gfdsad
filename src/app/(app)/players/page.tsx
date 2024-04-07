@@ -1,9 +1,9 @@
 import Players from "@/sections/players/Players";
-
+import { Playersd } from "@/constants";
 const page = () => {
   return (
     <section className="paddings mb-auto">
-      <Players />
+      <Players Playersd={Playersd} />
     </section>
   );
 };
