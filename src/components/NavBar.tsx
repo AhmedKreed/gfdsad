@@ -14,11 +14,21 @@ const NavBar = () => {
     const body = document.body.classList;
     toggleLinks ? body.remove("class-1") : body.add("class-1");
   };
+  const handleLink = () => {
+    setToggleLinks(!toggleLinks);
+    const body = document.body.classList;
+    body.remove("class-1");
+  };
+  const handleLogo = () => {
+    setToggleLinks(false);
+    const body = document.body.classList;
+    body.remove("class-1");
+  };
 
   return (
     <nav className="flex justify-between items-center padding-X py-5 relative bg-white border-b border-b-[#E6E6E6]">
       {/* LOGO */}
-      <Link href={"/"}>
+      <Link href={"/"} onClick={handleLink}>
         <Image
           unoptimized
           className="object-contain"
@@ -36,9 +46,7 @@ const NavBar = () => {
       >
         {NavLinks.map((link) => (
           <Link
-            onClick={() => {
-              setToggleLinks(false);
-            }}
+            onClick={handleLink}
             key={link.id}
             className="text-secondary items-center flex gap-2 font-semibold text-xl flex-wrap"
             href={link.link}
