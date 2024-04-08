@@ -3,7 +3,7 @@ import { MatchHighlights, MatchResult, MatchPlayers } from "@/components/match";
 
 const page = ({ params }: { params: { id: string } }) => {
   const ID = Number(params.id);
-  const matche = Matche[ID];
+  const matche = Matche[ID - 1];
   return (
     <section className="paddings grid lg:grid-cols-3 md:grid-cols-1 lg:gap-8">
       <MatchResult Matche={matche} />
