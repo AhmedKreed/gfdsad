@@ -8,6 +8,13 @@ import Link from "next/link";
 
 const NavBar = () => {
   const [toggleLinks, setToggleLinks] = useState(false);
+
+  const handleToggle = () => {
+    setToggleLinks(!toggleLinks);
+    const body = document.body.classList;
+    toggleLinks ? body.remove("class-1") : body.add("class-1");
+  };
+
   return (
     <nav className="flex justify-between items-center padding-X py-5 relative bg-white border-b border-b-[#E6E6E6]">
       {/* LOGO */}
@@ -25,7 +32,7 @@ const NavBar = () => {
       <ul
         className={`${
           toggleLinks ? "flex" : "hidden"
-        } lg:hidden links flex-col bg-white padding-X gap-12 py-10 items-start relative`}
+        } lg:hidden links flex-col bg-white padding-X gap-12 py-10 pb-16 items-start relative`}
       >
         {NavLinks.map((link) => (
           <Link
@@ -60,7 +67,7 @@ const NavBar = () => {
       {/* MENU ICON */}
       <div
         className="lg:hidden block w-6 h-6 relative cursor-pointer transition-none"
-        onClick={() => setToggleLinks(!toggleLinks)}
+        onClick={handleToggle}
       >
         <span
           className={`line ${
