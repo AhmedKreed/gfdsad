@@ -46,10 +46,11 @@ const NavBar = () => {
             {link.title}
           </Link>
         ))}
-        <div className="lg:hidden mt-auto flex gap-[6px]">
-          <div onClick={() => setToggleLinks(false)}>
-            <LogIn />
-          </div>
+        <div
+          className="lg:hidden w-full flex "
+          onClick={() => setToggleLinks(false)}
+        >
+          <LogIn />
         </div>
       </ul>
       {/* DESKTOP DEVICES */}
@@ -85,7 +86,7 @@ const NavBar = () => {
           } `}
         ></span>
       </div>
-      <div className="max-lg:hidden mr-auto flex gap-[6px]">
+      <div className="max-lg:hidden mr-auto ">
         <LogIn />
       </div>
     </nav>
