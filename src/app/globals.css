@@ -29,7 +29,7 @@ html {
   position: absolute;
   width: 100%;
   right: 0;
-  top: 73px;
+  top: 74px;
   height: calc(100vh - 73px);
 }
 .lines {
