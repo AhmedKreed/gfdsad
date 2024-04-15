@@ -1,5 +1,4 @@
-"use client";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import img from "@/assets/image19.png";
 import Image from "next/image";
 import Link from "next/link";
 const News = ({
@@ -27,28 +26,33 @@ const News = ({
       {news.map(
         (
           item: {
-            id: number;
-            img: string | StaticImport;
-            time: number;
-            title: string;
-            link: string;
+            id: string;
+            subject: string;
+            short_description: string;
+            status: string;
+            createdAt: string;
           },
           index: number
         ) => (
           <Link
             key={item.id}
             className={`${index <= limit ? "block" : "hidden"} `}
-            href={item.link}
+            href={`/news/${item.id}`}
           >
             <Image
               unoptimized
-              src={item.img}
+              src={img}
               alt={"img"}
               className={`w-full object-cover rounded-xl
               mb-3 ${col ? "lg:h-[193px] min-h-[177px]" : "min-h-[177px]"}`}
             />
-            <span className="text-secondary font-medium text-xs">{`قبل ${item.time} دقائق`}</span>
-            <p className="mt-4 text-sm text-primary font-bold">{item.title}</p>
+            <span className="text-secondary font-medium text-xs">
+              {item.createdAt.split(" ")[0]}
+            </span>
+            <p className="mt-4 text-primary font-bold">{item.subject}</p>
+            <p className="mt-2 text-sm text-primary font-bold">
+              {item.short_description}
+            </p>
           </Link>
         )
       )}

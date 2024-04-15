@@ -1,26 +1,46 @@
-"use client";
 import News from "@/components/News";
-import { AllNews } from "@/constants";
-import { useState } from "react";
-const Page = () => {
-  const [limit, setLimit] = useState(19);
+import {
+  ApolloClient,
+  DefaultOptions,
+  InMemoryCache,
+  gql,
+} from "@apollo/client";
+
+const defaultOptions: DefaultOptions = {
+  watchQuery: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "ignore",
+  },
+  query: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "all",
+  },
+};
+
+const client = new ApolloClient({
+  uri: "https://api-dev.omkooora.com/graphql",
+  cache: new InMemoryCache(),
+  defaultOptions: defaultOptions,
+});
+
+const Page = async () => {
+  const { data } = await client.query({
+    query: gql`
+      {
+        allBlogs {
+          id
+          subject
+          short_description
+          status
+          createdAt
+        }
+      }
+    `,
+  });
+
   return (
     <section className="paddings">
-      <News title={"أخبار"} news={AllNews} limit={limit} />
-      <div className="flex felx-col">
-        <button
-          className="font-semibold px-4 py-[10px] text-sm rounded-lg bg-[#F9F5FF] text-[#135CB8] mt-12 mx-auto"
-          onClick={() =>
-            setLimit((prev) =>
-              prev === AllNews.length - 1
-                ? prev - AllNews.length / 2
-                : prev + AllNews.length / 2
-            )
-          }
-        >
-          {limit === 19 ? "عرض المزيد" : "عرض أقل"}
-        </button>
-      </div>
+      <News title={"أخبار"} news={data.allBlogs} limit={data.allBlogs.length} />
     </section>
   );
 };

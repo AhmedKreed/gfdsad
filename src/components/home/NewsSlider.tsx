@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
+import img from "@/assets/image19.png";
 import Image from "next/image";
 import leftarrow from "@/assets/Left arrow.png";
 import rightarrow from "@/assets/Right arrow (1).png";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
+
 const NewsSlider = ({ news, title }: { news: any; title: string }) => {
   const [slider, setSlider] = useState(0);
+
   const handleLeftArrow = () => {
     setSlider((prev) => (prev ? prev - 1 : news.length - 1));
   };
@@ -34,26 +36,29 @@ const NewsSlider = ({ news, title }: { news: any; title: string }) => {
           />
         </div>
       </div>
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 ">
         {news[slider].map(
           (item: {
-            id: number;
-            img: string | StaticImport;
-            time: number;
-            title: string;
-            link: string;
+            id: string;
+            subject: string;
+            short_description: string;
+            status: string;
+            createdAt: string;
           }) => (
-            <Link key={item.id} href={item.link}>
+            <Link key={item.id} href={`news/${item.id}`}>
               <Image
                 unoptimized
-                src={item.img}
+                src={img}
                 alt={"img"}
                 className="w-full min-h-[177px] object-cover rounded-xl
               mb-3"
               />
-              <span className="text-secondary font-medium text-xs">{`قبل ${item.time} دقائق`}</span>
-              <p className="mt-4 text-sm text-primary font-bold">
-                {item.title}
+              <span className="text-secondary font-medium text-sm">
+                {item.createdAt.split(" ")[0]}
+              </span>
+              <p className="mt-3 text-primary font-bold">{item.subject}</p>
+              <p className="mt-2 text-xs text-secondary font-bold">
+                {item.short_description}
               </p>
             </Link>
           )

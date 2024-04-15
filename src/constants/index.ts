@@ -28,7 +28,7 @@ export const NavLinks = [
   { id: 3, title: "الفرق", link: "/clubs" },
 
   { id: 4, title: "لاعبين", link: "/players" },
-  { id: 5, title: "المسابقات", link: "/league" },
+  { id: 5, title: "المسابقات", link: "/leagues" },
   { id: 6, title: "حجز ملاعب", link: "/reservation" },
 ];
 export const Matche = [

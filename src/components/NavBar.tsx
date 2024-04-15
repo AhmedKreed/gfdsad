@@ -15,7 +15,7 @@ const NavBar = () => {
     toggleLinks ? body.remove("class-1") : body.add("class-1");
   };
   const handleLink = () => {
-    setToggleLinks(!toggleLinks);
+    setToggleLinks(false);
     const body = document.body.classList;
     body.remove("class-1");
   };

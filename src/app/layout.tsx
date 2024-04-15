@@ -15,7 +15,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html dir="rtl" suppressHydrationWarning>
+    <html dir="rtl" suppressHydrationWarning={true}>
       <body className={cairo.className}>{children}</body>
     </html>
   );

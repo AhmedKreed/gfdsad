@@ -35,7 +35,7 @@ const CurrentLeagues = ({ leagues }: { leagues: Leagues }) => {
         ))}
         <div className="lines" />
       </div>
-      <ShowMore link={"/league"} />
+      <ShowMore link={"/leagues"} />
     </div>
   );
 };

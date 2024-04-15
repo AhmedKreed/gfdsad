@@ -29,7 +29,7 @@ let stadium: {
 for (let index = 0; index < 12; index++) {
   stadium.push(stadiums);
 }
-const Reserve = () => {
+const Reserve = ({ allStadium }: { allStadium: any[] }) => {
   // restoring the locations in the useState
   const [locations, setLocations] = useState<string[]>();
   const onInputChange = (x: any, { action }: any) => {
@@ -134,21 +134,25 @@ const Reserve = () => {
         </div>
       </nav>
       <div className="col-span-3 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 ">
-        {stadium.map((item, index) => (
-          <Link key={index} className="p-4" href={`/reservation/${index + 1}`}>
+        {allStadium.map((item, index) => (
+          <Link
+            key={index}
+            className="p-4 reserve flex flex-col bg-[#fcfcfd]"
+            href={`/reservation/${item.id}`}
+          >
             <Image
               unoptimized
-              src={item.img}
+              src={imgstadium}
               alt={"stadium"}
               className="object-cover mb-6 w-full h-auto"
             />
-            <h1 className="mb-6 text-2xl font-semibold text-primary">
-              {item.title}
+            <h1 className="mb-6 text-xl font-semibold text-primary">
+              {item.name}
             </h1>
-            <p className="mb-4 text-xs text-secondary font-medium leading-[18px]">
-              {item.desc}
+            <p className="mb-4 text-sm text-secondary font-medium leading-[18px]">
+              {item.about}
             </p>
-            <p className="font-bold text-primary">{item.price}</p>
+            <p className="font-bold text-primary mt-auto">{`يبدأ من ${item.rent} ريال`}</p>
           </Link>
         ))}
       </div>

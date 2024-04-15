@@ -33,13 +33,13 @@ const Matches = ({ Matche }: { Matche: any }) => {
   const onInputChange = (x: any, { action, prevInputValue }: any) => {
     if (action === "select-option") {
       setSports(x);
-      // when adding from the select
+      // adding value to the select
     } else if (action === "clear") {
       setSports(undefined);
-      // when clearing from the select
+      // clearing all the values from the select
     } else if (action === "remove-value") {
       sports.length === 1 ? setSports(undefined) : setSports(x);
-      // when removing certain value from the select
+      // removing certain value from the select
     }
   };
   const handleClick = (index: number) => {
@@ -75,7 +75,7 @@ const Matches = ({ Matche }: { Matche: any }) => {
             alt={"rightArrow"}
             width={32}
             height={32}
-            className="object-contain max-sm:hidden w-auto h-auto"
+            className="object-contain max-sm:hidden w-auto h-auto cursor-pointer"
             onClick={() => handleRightArrow()}
           />
           <div className="mt-[5px] sm:static relative w-full flex flex-1 border border-[#B3B3B3] rounded-lg text-[#4D4D4D] sm:text-sm text-xs font-semibold cursor-pointer ">
@@ -152,7 +152,7 @@ const Matches = ({ Matche }: { Matche: any }) => {
             alt={"leftArrow"}
             width={32}
             height={32}
-            className="object-contain max-sm:hidden"
+            className="object-contain max-sm:hidden cursor-pointer"
             onClick={handleLeftArrow}
           />
         </div>

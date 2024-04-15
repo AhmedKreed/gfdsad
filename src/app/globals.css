@@ -50,12 +50,15 @@ html {
 .calender tr {
   justify-content: space-evenly;
 }
-input[type="radio"]:checked {
-  background-color: red;
+.reserve {
+  height: 360px !important;
 }
 @media (max-width: 768px) {
   .rows {
     grid-row: 4;
+  }
+  .reserve {
+    height: auto !important;
   }
 }
 @layer components {
