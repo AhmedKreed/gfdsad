@@ -143,8 +143,10 @@ const Reserve = ({ allStadium }: { allStadium: any[] }) => {
             <Image
               unoptimized
               src={imgstadium}
+              width={311}
+              height={190}
               alt={"stadium"}
-              className="object-cover mb-6 w-full h-auto"
+              className="object-fill mb-6 w-full min-h-[190px]"
             />
             <h1 className="mb-6 text-xl font-semibold text-primary">
               {item.name}

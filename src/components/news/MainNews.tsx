@@ -8,7 +8,10 @@ const MainNews = ({ AllNews }: { AllNews: any }) => {
     (document.getElementById("id") as HTMLElement).innerHTML =
       AllNews.description ? AllNews.description : AllNews.short_description;
   }, [AllNews]);
-
+  let createdAt = AllNews.createdAt.split(" ");
+  const hourAt = createdAt[1].split(":").slice(0, 2).join(":");
+  const dateAt = AllNews.createdAt.split(" ")[0];
+  createdAt = dateAt + " " + hourAt;
   return (
     <>
       <Image
@@ -19,7 +22,8 @@ const MainNews = ({ AllNews }: { AllNews: any }) => {
       />
       <p className="mb-4 text-secondary font-medium">
         {AllNews.club ? AllNews.club.name : " "}
-        <span className="mr-4">{AllNews.createdAt}</span>
+        <br className="sm:hidden flex" />
+        <span className="mr-4 leading-[30px]">{createdAt}</span>
       </p>
       <h1 className="text-primary font-bold text-xl md:text-2xl mb-4">
         {AllNews.subject}

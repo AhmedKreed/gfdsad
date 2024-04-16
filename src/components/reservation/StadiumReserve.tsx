@@ -9,9 +9,9 @@ const StadiumReserve = () => {
 
   const [reserveDate, setReserveDate] = useState<any>();
 
-  const [stadium, setStadium] = useState("6V6");
+  const [stadium, setStadium] = useState("4V4");
 
-  const [time, setTime] = useState("90 دقيقة");
+  const [time, setTime] = useState("30 دقيقة");
 
   const [inputValue, setInputValue] = useState("");
 

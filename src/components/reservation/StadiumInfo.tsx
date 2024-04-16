@@ -17,7 +17,12 @@ const StadiumInfo = ({
     <div>
       <h1 className="mb-3 text-primary text-2xl font-bold">{name}</h1>
       <div className="flex items-center gap-3 mb-8">
-        <Image unoptimized src={logo} alt={"logo"} className="w-auto h-auto" />{" "}
+        <Image
+          unoptimized
+          src={logo}
+          alt={"logo"}
+          className="w-auto h-auto object-contain"
+        />{" "}
         <span className="text-sm medium text-secondary">
           {governorate || "////"}
         </span>
@@ -26,7 +31,7 @@ const StadiumInfo = ({
         unoptimized
         src={stadiums}
         alt={"stadium"}
-        className="w-full h-auto object-cover mb-6"
+        className="object-cover mb-6 w-full h-[360px] rounded-xl"
       />
       <div className="p-4 mb-8">
         <h3 className="text-base font-bold text-primary mb-3">لمحة عامة</h3>

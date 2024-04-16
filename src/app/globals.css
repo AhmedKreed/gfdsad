@@ -53,6 +53,9 @@ html {
 .reserve {
   height: 360px !important;
 }
+.calender button[aria-selected="true"] {
+  color: white !important;
+}
 @media (max-width: 768px) {
   .rows {
     grid-row: 4;
