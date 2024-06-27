@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const page = ({ params }: { params: { id: string } }) => {
+  // The API enpoint for league was not provided
   const header = ["ترتيب", "نادي", "ل", "ف", "ت", "خ", "ج", "ن"];
   let goals = [];
   let goal = {

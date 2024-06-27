@@ -1,12 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const useDate = () => {
-  const [today, setDate] = useState(new Date());
-
-  useEffect(() => {
-    setDate(new Date());
-  }, []);
+  const [today] = useState(new Date());
 
   const day = today.getDay();
   const date = today;

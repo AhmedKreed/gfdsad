@@ -53,6 +53,9 @@ const Home = async () => {
     `,
   });
 
+  // The previous API did not provide an endpoint to fetch the latest news in paginated form.
+  // As a temporary solution, I manually slice the array of blogs to get the latest news.
+  // This will fetch the latest 3 blogs, the next 3 blogs, and the 3 blogs after that.
   const latestNews = [
     data.allBlogs.slice(data.allBlogs.length - 3),
     data.allBlogs.slice(data.allBlogs.length - 6, data.allBlogs.length - 3),
@@ -69,19 +72,6 @@ const Home = async () => {
   ];
 
   const createdAt = data.allBlogs[1].createdAt.split(" ");
-  // console.log(createdAt);
-  // const hour = createdAt[1].split(":")[0];
-  // const dd = 24 - hour;
-  // const hourTime =
-  //   date.getHours() > hour ? date.getHours() - hour : date.getHours() + dd;
-  // const day = createdAt[0];
-  // var start = new Date(day);
-  // var end = new Date(date);
-  // var diff = (end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24);
-  // console.log(diff);
-
-  // const diff = useDateDiff(createdAt);
-  // console.log(diff);
 
   return (
     <section className="paddings">

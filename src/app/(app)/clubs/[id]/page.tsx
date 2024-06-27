@@ -29,6 +29,7 @@ const client = new ApolloClient({
 });
 
 const page = async ({ params }: { params: { id: string } }) => {
+  // The API endpoint does not provide a direct team endpoint; it only returns all teams associated with the club.
   const ID = params.id;
   const { data } = await client.query({
     query: gql`

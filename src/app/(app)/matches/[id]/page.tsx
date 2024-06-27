@@ -2,6 +2,7 @@ import { Matche } from "@/constants";
 import { MatchHighlights, MatchResult, MatchPlayers } from "@/components/match";
 
 const page = ({ params }: { params: { id: string } }) => {
+  // The API enpoint for matche was not provided
   const ID = Number(params.id);
   const matche = Matche[ID - 1];
   return (

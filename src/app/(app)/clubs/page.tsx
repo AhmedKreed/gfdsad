@@ -44,6 +44,9 @@ const page = async () => {
       }
     `,
   });
+  // The API endpoint does not provide a direct team endpoint; it only returns all teams associated with the club.
+  // Additionally, there is no paginated team endpoint based on the club and the team name.
+  // As a temporary solution, I've manually handled this by collecting teams from the data.
   let teamss: any[] = [];
   data.allClub.map((item: any) => ({
     ...item.teams.map((team: any) => teamss.push(team)),
